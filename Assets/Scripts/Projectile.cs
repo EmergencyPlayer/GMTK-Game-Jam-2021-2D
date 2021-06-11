@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
     public float distance;
     public LayerMask whatIsSolid;
 
+    public Weapon glueList;
+
     private void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
@@ -28,6 +30,15 @@ public class Projectile : MonoBehaviour
         }
 
         transform.Translate(Vector2.up * speed * Time.deltaTime);
+    }
+
+    //void GlueTogether()
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        GameObject item = coll.collider.gameObject;
+        glueList.glueableList.Add(item);
+        Debug.Log("Item has been added");
     }
 
     void DestroyProjectile()

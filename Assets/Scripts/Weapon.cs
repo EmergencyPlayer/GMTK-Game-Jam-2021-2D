@@ -12,6 +12,8 @@ public class Weapon : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
 
+    public List<GameObject> glueableList;
+
     private void Update()
     {
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -30,6 +32,15 @@ public class Weapon : MonoBehaviour
         {
             timeBtwShots -= Time.deltaTime;
         }
+
+        if (glueableList.Count >= 2)
+        {
+            Debug.Log("2 objects are in list");
+            glueableList[0].GetComponent<Gluable>().GlueTo(glueableList[1]);
+            glueableList.Clear();
+        }
     }
+
+
 }
     
