@@ -42,7 +42,7 @@ public class GlueLine : MonoBehaviour
         //Debug.Log(targetPos);
        // Debug.Log(target.name);
         line.positionCount = resolution;
-        float angle = LookAtAngle(targetPos - transform.position);
+        float angle = LookAtAngle(targetPos - transform.InverseTransformPoint(transform.position));
         float percent = 0;
         while (percent <= 1f)
         {
@@ -58,18 +58,19 @@ public class GlueLine : MonoBehaviour
         Vector3 ropeEnd = Vector3.Lerp(transform.position, targetPos, percent);
         //Debug.Log(Vector3.Lerp(transform.TransformPoint(transform.position), targetPos, 100));
         float length = Vector2.Distance(transform.position, ropeEnd);
-        
+        Debug.Log(transform.TransformPoint(targetPos));
         for (int i = 0; i < resolution; i++)
         {
             float xPos = (float)i / resolution * length;
-            float reversePercent = (1 - percent);
+            //float reversePercent = (1 - percent);
 
-            float amplitude = Mathf.Sin(reversePercent * wobbleCount * Mathf.PI);
+            //float amplitude = Mathf.Sin(reversePercent * wobbleCount * Mathf.PI);
 
-            float yPos = Mathf.Sin((float)waveCount * i / resolution * 2 * Mathf.PI * reversePercent) * amplitude;
+            //float yPos = Mathf.Sin((float)waveCount * i / resolution * 2 * Mathf.PI * reversePercent) * amplitude;
 
-            Vector2 pos = RotatePoint( new Vector2(xPos  , yPos ), new Vector2(0,0), angle);
+            Vector2 pos = RotatePoint( new Vector2(xPos  , 0 ), new Vector2(0,0), angle);
             //xPos + gameObject.transform.position.x, yPos + gameObject.transform.position.y
+            Debug.Log(pos);
             line.SetPosition(i, pos);
         }
     }
@@ -77,7 +78,7 @@ public class GlueLine : MonoBehaviour
     Vector2 RotatePoint(Vector2 point, Vector2 pivot, float angle)
     {
         Vector2 dir = point - pivot;
-        dir = Quaternion.Euler(0, 0, angle) * dir;
+        dir = Quaternion.Euler(0, 0, angle ) * dir;
         point = dir + pivot;
         return point;
     }
