@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6854796600830287814}
   - component: {fileID: 3124687275289062459}
   - component: {fileID: 4725192289525856002}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gluable
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,9 +120,9 @@ GameObject:
   - component: {fileID: 5355158168257867945}
   - component: {fileID: 3540855378301917512}
   - component: {fileID: 7297977812357976819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Test1
-  m_TagString: Gluable
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

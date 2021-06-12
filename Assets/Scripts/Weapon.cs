@@ -14,6 +14,11 @@ public class Weapon : MonoBehaviour
 
     public List<GameObject> glueableList;
 
+    private void Start()
+    {
+        glueableList = new List<GameObject>();
+    }
+
     private void Update()
     {
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -32,7 +37,14 @@ public class Weapon : MonoBehaviour
         {
             timeBtwShots -= Time.deltaTime;
         }
+    }
 
+    public void addToList(GameObject item)
+    {
+        if (!glueableList.Contains(item))
+        {
+            glueableList.Add(item);
+        }
         if (glueableList.Count >= 2)
         {
             Debug.Log("2 objects are in list");
@@ -40,7 +52,5 @@ public class Weapon : MonoBehaviour
             glueableList.Clear();
         }
     }
-
-
 }
     
