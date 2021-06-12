@@ -67,6 +67,7 @@ public class Gluable : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+
         Debug.Log("touch");
         
         rb.velocity = new Vector2(0.0f, 0.0f);
