@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Gluable
   - Anchor
+  - Projectile
   layers:
   - Default
   - TransparentFX
