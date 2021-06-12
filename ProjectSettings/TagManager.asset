@@ -3,19 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Item
-  - Enemy
+  tags: [Item, Enemy, Gluable]
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - Item
   - Enemy
   - Environment
+  - Wall
   - 
   - 
   - 
