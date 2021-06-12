@@ -52,17 +52,26 @@ public class Gluable : MonoBehaviour
         if (g.tag != "Item")
             return;
 
-        try
-        {
-            if (isGlueing)
-                return;
+        /*try
+        {*/
+        if (isGlueing)
+            return;
 
-            this.isParent = !flag;
-            target = g;
-            g.GetComponent<Gluable>().GlueTo(gameObject, !flag);
-            isGlueing = true;
-        }
-        catch (Exception e) { return; }
+        /*if (this.rb == g.GetComponent<Rigidbody2D>())
+        {
+            return;
+        }*/
+
+        this.isParent = !flag;
+        target = g;
+        isGlueing = true;
+        g.GetComponent<Gluable>().GlueTo(gameObject, !flag);
+        
+        //}
+        /*catch (Exception e) 
+        { 
+            Debug.Log(e);
+        }*/
     }
 
     void OnCollisionEnter2D(Collision2D collision)
