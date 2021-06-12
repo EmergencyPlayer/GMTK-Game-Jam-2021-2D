@@ -98,7 +98,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: f06a733ab48920f4d8296f7865a8ec36, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb90dfe16cf39bf45be91944c824eeb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -145,7 +145,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 4.6131, y: 4.6327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5355158168257867945
 MonoBehaviour:
@@ -156,11 +156,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7628284681279089971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c5f0c3f2da58cf41bcf2e48ec356a25, type: 3}
+  m_Script: {fileID: 11500000, guid: b01c35cb4dbbb9b4981f8803d7add6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glue_power: 2
-  line: {fileID: 0}
+  glue_power: 1
+  isAnchor: 0
 --- !u!50 &3540855378301917512
 Rigidbody2D:
   serializedVersion: 4

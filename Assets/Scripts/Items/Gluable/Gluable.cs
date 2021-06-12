@@ -65,7 +65,6 @@ public class Gluable : MonoBehaviour
         if (collision.collider.gameObject.tag != "Item" )
             return;
         
-        
         rb.velocity = new Vector2(0.0f, 0.0f);
         rb.angularVelocity = 0.0f;
         isGlueing = false;
