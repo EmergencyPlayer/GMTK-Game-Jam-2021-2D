@@ -50,12 +50,6 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: Hover
-    clip: {fileID: 8300000, guid: 91d8b49fb1c10754885e190cf114565d, type: 3}
-    volume: 0.45
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
   - name: Collision
     clip: {fileID: 8300000, guid: 286b04bf897870143a60de8ecc439bce, type: 3}
     volume: 0.45
@@ -78,5 +72,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 99eacbaf755b0514780f82549d6747fb, type: 3}
     volume: 0.25
     pitch: 1
-    loop: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Reset
+    clip: {fileID: 8300000, guid: 63813d9ec6645f64780e0177ea533031, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
     source: {fileID: 0}

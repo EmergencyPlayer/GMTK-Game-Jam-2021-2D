@@ -16,6 +16,7 @@ public class ReloadScene : MonoBehaviour
     {
         if (Input.GetKeyDown("r"))
         {
+            FindObjectOfType<AudioManager>().Play("Reset");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
