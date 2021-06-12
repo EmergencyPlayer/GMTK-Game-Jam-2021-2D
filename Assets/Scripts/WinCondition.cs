@@ -11,6 +11,8 @@ public class WinCondition : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
-            Debug.Log("You Win!");
+        {
+            FindObjectOfType<AudioManager>().Play("Win");
+        }
     }
 }

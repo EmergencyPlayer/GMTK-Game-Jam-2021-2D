@@ -22,6 +22,7 @@ public class Character2D : MonoBehaviour
         if (!Mathf.Approximately(0, movement))
         {
             transform.rotation = movement > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+            //FindObjectOfType<AudioManager>().Play("PlayerWalking");
         }
 
         if(Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
