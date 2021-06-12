@@ -23,6 +23,7 @@ public class GlueLine : MonoBehaviour
     {
         if(isMakingLine)
             StartCoroutine(AnimateRope(transform.InverseTransformPoint(target.position)));
+            
     }
 
     public void MakeLine(GameObject go)
@@ -31,8 +32,15 @@ public class GlueLine : MonoBehaviour
         isMakingLine = true;
     }
 
+    public void StopLine()
+    {
+        isMakingLine = false;
+    }
+
     private IEnumerator AnimateRope(Vector3 targetPos)
     {
+        //Debug.Log(targetPos);
+       // Debug.Log(target.name);
         line.positionCount = resolution;
         float angle = LookAtAngle(targetPos - transform.position);
         float percent = 0;
@@ -48,8 +56,9 @@ public class GlueLine : MonoBehaviour
     private void SetPoints(Vector3 targetPos, float percent, float angle)
     {
         Vector3 ropeEnd = Vector3.Lerp(transform.position, targetPos, percent);
+        //Debug.Log(Vector3.Lerp(transform.TransformPoint(transform.position), targetPos, 100));
         float length = Vector2.Distance(transform.position, ropeEnd);
-
+        
         for (int i = 0; i < resolution; i++)
         {
             float xPos = (float)i / resolution * length;
@@ -59,10 +68,7 @@ public class GlueLine : MonoBehaviour
 
             float yPos = Mathf.Sin((float)waveCount * i / resolution * 2 * Mathf.PI * reversePercent) * amplitude;
 
-            Vector2 pos = RotatePoint( new Vector2(xPos  , yPos ), transform.position, angle);
-            Debug.Log(new Vector2(xPos, yPos));
-            Debug.Log(pos);
-            Debug.Log(-gameObject.transform.parent.transform.position);
+            Vector2 pos = RotatePoint( new Vector2(xPos  , yPos ), new Vector2(0,0), angle);
             //xPos + gameObject.transform.position.x, yPos + gameObject.transform.position.y
             line.SetPosition(i, pos);
         }

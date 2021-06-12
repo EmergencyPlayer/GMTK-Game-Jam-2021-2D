@@ -5,10 +5,7 @@ using System;
 
 public class Gluable : MonoBehaviour
 {
-    public float glue_power = 0.1f;
-
-    public int times_used;
-    public int max_times;
+    public float glue_power = 100f;
 
     private Rigidbody2D rb;
     private bool isGlueing;
@@ -38,22 +35,10 @@ public class Gluable : MonoBehaviour
         if (isGlueing)
         {
             Vector2 dir = (target.transform.position - gameObject.transform.position);
-            //rb.AddForce((dir/dir.magnitude) * glue_power);
+            rb.AddForce((dir/dir.magnitude) * glue_power);
         }
     }
             
-
-    public void Init()
-    {
-        times_used = 0;
-        max_times = 1;
-    }
-
-    public void Init(int times, int max)
-    {
-        times_used = times;
-        max_times = max;
-    }
 
     public void GlueTo(GameObject g, bool flag = false)
     {
@@ -76,37 +61,36 @@ public class Gluable : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.gameObject.tag != "Item")
-        {
             return;
-        }
-        Debug.Log("touch");
+        
         
         rb.velocity = new Vector2(0.0f, 0.0f);
         rb.angularVelocity = 0.0f;
         rb.gravityScale = 1f;
         isGlueing = false;
+        gl.StopLine();
 
         if (!isParent)
         {
+            List<GameObject> temp = new List<GameObject>();
+            Debug.Log(gameObject.name);
+
             foreach(Transform child in transform)
             {
-                child.parent = target.transform;
+                if(child.tag == "Item")
+                    temp.Add(child.transform.gameObject);
+
+                Debug.Log(child.name);
             }
-            gameObject.transform.GetChild(0).parent = target.transform;
+
+            for(int i = 0; i < temp.Count; i++)
+            {
+                temp[i].transform.parent = target.transform;           
+            }
             Destroy(gameObject);
         }
         
     }
 
-    public void IncreaseTimesUsed(int t = 1)
-    {
-        times_used += t;
-        CheckDestroy();
-    }
 
-    private void CheckDestroy()
-    {
-        if (times_used >= max_times)
-            Destroy(gameObject);
-    }
 }
