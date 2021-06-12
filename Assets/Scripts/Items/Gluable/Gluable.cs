@@ -5,13 +5,14 @@ using System;
 
 public class Gluable : MonoBehaviour
 {
-    public float glue_power = 100f;
+    public float glue_power = 2f;
 
     private Rigidbody2D rb;
     private bool isGlueing;
     private GameObject target;
     private bool isParent;
 
+    public bool isAnchor;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,8 @@ public class Gluable : MonoBehaviour
         if (isGlueing)
         {
             Vector2 dir = (target.transform.position - gameObject.transform.position);
-            rb.AddForce((dir/dir.magnitude) * glue_power);
+            rb.AddForce((dir/dir.magnitude) * glue_power, ForceMode2D.Impulse);
+            
         }
     }
             
@@ -49,21 +51,34 @@ public class Gluable : MonoBehaviour
         this.isParent = !flag;
         target = g;
         isGlueing = true;
+
+        if (!isAnchor)
+            rb.constraints = RigidbodyConstraints2D.None;
+        
+        
         g.GetComponent<Gluable>().GlueTo(gameObject, !flag);      
       
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.tag != "Item" && collision.collider.gameObject.name != target.name)
+        if (collision.collider.gameObject.tag != "Item" )
             return;
         
         rb.velocity = new Vector2(0.0f, 0.0f);
         rb.angularVelocity = 0.0f;
-        rb.gravityScale = 1f;
         isGlueing = false;
 
-        if (!isParent)
+        if (isAnchor || target.GetComponent<Gluable>().isAnchor)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+            return;
+        }
+        rb.constraints = RigidbodyConstraints2D.None;
+
+        rb.gravityScale = 1f;
+
+        if (!isParent )
         {
             List<GameObject> temp = new List<GameObject>();
             Debug.Log(gameObject.name);
