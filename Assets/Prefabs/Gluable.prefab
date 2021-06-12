@@ -49,7 +49,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.8, y: 10.8}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -145,7 +145,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 4.6131, y: 4.6327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5355158168257867945
 MonoBehaviour:
@@ -159,7 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01c35cb4dbbb9b4981f8803d7add6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glue_power: 100
+  glue_power: 10
+  isAnchor: 0
 --- !u!50 &3540855378301917512
 Rigidbody2D:
   serializedVersion: 4
