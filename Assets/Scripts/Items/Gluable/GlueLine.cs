@@ -10,6 +10,7 @@ public class GlueLine : MonoBehaviour
     [SerializeField] private float waveSize, animSpeed;
 
     private LineRenderer line;
+    private bool isMakingLine = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,29 +21,31 @@ public class GlueLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(isMakingLine)
+            StartCoroutine(AnimateRope(transform.InverseTransformPoint(target.position)));
     }
 
     public void MakeLine(GameObject go)
     {
-        StartCoroutine(AnimateRope(go.transform.position));
+        target = go.transform;
+        isMakingLine = true;
     }
 
     private IEnumerator AnimateRope(Vector3 targetPos)
     {
         line.positionCount = resolution;
-
+        float angle = LookAtAngle(targetPos - transform.position);
         float percent = 0;
         while (percent <= 1f)
         {
             percent += Time.deltaTime * animSpeed;
-            SetPoints(targetPos, percent);
+            SetPoints(targetPos, percent, angle);
             yield return null;
         }
-        SetPoints(targetPos, 1);
+        SetPoints(targetPos, 1, angle);
     }
 
-    private void SetPoints(Vector3 targetPos, float percent)
+    private void SetPoints(Vector3 targetPos, float percent, float angle)
     {
         Vector3 ropeEnd = Vector3.Lerp(transform.position, targetPos, percent);
         float length = Vector2.Distance(transform.position, ropeEnd);
@@ -56,8 +59,25 @@ public class GlueLine : MonoBehaviour
 
             float yPos = Mathf.Sin((float)waveCount * i / resolution * 2 * Mathf.PI * reversePercent) * amplitude;
 
-            Vector2 pos = new Vector2(xPos, yPos);
+            Vector2 pos = RotatePoint( new Vector2(xPos  , yPos ), transform.position, angle);
+            Debug.Log(new Vector2(xPos, yPos));
+            Debug.Log(pos);
+            Debug.Log(-gameObject.transform.parent.transform.position);
+            //xPos + gameObject.transform.position.x, yPos + gameObject.transform.position.y
             line.SetPosition(i, pos);
         }
+    }
+
+    Vector2 RotatePoint(Vector2 point, Vector2 pivot, float angle)
+    {
+        Vector2 dir = point - pivot;
+        dir = Quaternion.Euler(0, 0, angle) * dir;
+        point = dir + pivot;
+        return point;
+    }
+
+    private float LookAtAngle(Vector2 target)
+    {
+        return Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
     }
 }
