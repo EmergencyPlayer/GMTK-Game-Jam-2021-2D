@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 57b938900355d9c44bec1825ad9d8978
+guid: 8009e75fe5588de44b3bbf9fa18b5725
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 327282602149968024
-    second: mc_wpk_jump-Sheet_0
+      213: -3771495464861953192
+    second: mc_wpk_jump_0
   - first:
-      213: -5433064029727343575
-    second: mc_wpk_jump-Sheet_1
+      213: 8099557506435351854
+    second: mc_wpk_jump_1
   - first:
-      213: -4366523317486976239
-    second: mc_wpk_jump-Sheet_2
+      213: -4049471351534490526
+    second: mc_wpk_jump_2
+  - first:
+      213: -5454378672660972552
+    second: mc_wpk_jump_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mc_wpk_jump-Sheet_0
+      name: mc_wpk_jump_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,14 +117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 898705aeacdba8400800000000000000
-      internalID: 327282602149968024
+      spriteID: 85318e06bd4f8abc0800000000000000
+      internalID: -3771495464861953192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mc_wpk_jump-Sheet_1
+      name: mc_wpk_jump_1
       rect:
         serializedVersion: 2
         x: 32
@@ -135,14 +138,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92c3622fc01e994b0800000000000000
-      internalID: -5433064029727343575
+      spriteID: e258de883a8676070800000000000000
+      internalID: 8099557506435351854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mc_wpk_jump-Sheet_2
+      name: mc_wpk_jump_2
       rect:
         serializedVersion: 2
         x: 0
@@ -156,8 +159,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1138ab57d2ef663c0800000000000000
-      internalID: -4366523317486976239
+      spriteID: 26c6aa3c2436dc7c0800000000000000
+      internalID: -4049471351534490526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mc_wpk_jump_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb7399ee772e44b0800000000000000
+      internalID: -5454378672660972552
       vertices: []
       indices: 
       edges: []
