@@ -49,7 +49,7 @@ public class Gluable : MonoBehaviour
 
     public void GlueTo(GameObject g, bool flag = false)
     {
-        if (g.tag != "Gluable")
+        if (g.tag != "Item")
             return;
 
         try
@@ -67,7 +67,10 @@ public class Gluable : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-
+        if (collision.collider.gameObject.tag != "Item")
+        {
+            return;
+        }
         Debug.Log("touch");
         
         rb.velocity = new Vector2(0.0f, 0.0f);
@@ -76,6 +79,10 @@ public class Gluable : MonoBehaviour
 
         if (!isParent)
         {
+            foreach(Transform child in transform)
+            {
+                child.parent = target.transform;
+            }
             gameObject.transform.GetChild(0).parent = target.transform;
             Destroy(gameObject);
         }

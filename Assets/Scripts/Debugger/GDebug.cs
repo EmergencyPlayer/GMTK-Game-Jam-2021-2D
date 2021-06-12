@@ -5,8 +5,7 @@ using UnityEngine;
 public class GDebug : MonoBehaviour
 {
     private bool begin;
-    public GameObject[] list;
-    public List<GameObject> l2;
+    public List<GameObject> glueableList;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,21 +15,10 @@ public class GDebug : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("p"))
-            begin = true;
-
-        if (Input.GetKeyUp("p")) {
-            l2.RemoveAt(1);
-            begin = false;
-        }
-            
-
-        if (begin)
+        if (glueableList.Count >= 2)
         {
-            l2[0].GetComponent<Gluable>().GlueTo(l2[1]);
-            
-            
-            //Debug.Log("try");
+            Debug.Log("Glued");
+            glueableList[0].GetComponent<Gluable>().GlueTo(glueableList[1]);
         }
     }
 }
