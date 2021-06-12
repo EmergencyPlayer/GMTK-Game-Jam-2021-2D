@@ -71,7 +71,7 @@ public class Gluable : MonoBehaviour
 
         if (isAnchor || target.GetComponent<Gluable>().isAnchor)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
             return;
         }
         rb.constraints = RigidbodyConstraints2D.None;
