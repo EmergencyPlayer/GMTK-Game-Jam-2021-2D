@@ -5,7 +5,7 @@ using System;
 
 public class Gluable : MonoBehaviour
 {
-    public float glue_power = 0.04f;
+    public float glue_power = 0.1f;
 
     public int times_used;
     public int max_times;
@@ -15,12 +15,16 @@ public class Gluable : MonoBehaviour
     private GameObject target;
     private bool isParent;
 
+    [SerializeField] private GameObject line;
+    private GlueLine gl;
+
     // Start is called before the first frame update
     void Start()
     {
         this.rb = gameObject.GetComponent<Rigidbody2D>();
         this.isGlueing = false;
         this.isParent = false;
+        this.gl = line.GetComponent<GlueLine>();
     }
 
     // Update is called once per frame
@@ -32,8 +36,12 @@ public class Gluable : MonoBehaviour
     void FixedUpdate()
     {
         if (isGlueing)
-            rb.AddForce((target.transform.position - gameObject.transform.position) * glue_power, ForceMode2D.Impulse);
+        {
+            Vector2 dir = (target.transform.position - gameObject.transform.position);
+            //rb.AddForce((dir/dir.magnitude) * glue_power);
+        }
     }
+            
 
     public void Init()
     {
@@ -52,26 +60,17 @@ public class Gluable : MonoBehaviour
         if (g.tag != "Item")
             return;
 
-        /*try
-        {*/
         if (isGlueing)
             return;
-
-        /*if (this.rb == g.GetComponent<Rigidbody2D>())
-        {
-            return;
-        }*/
 
         this.isParent = !flag;
         target = g;
         isGlueing = true;
         g.GetComponent<Gluable>().GlueTo(gameObject, !flag);
         
-        //}
-        /*catch (Exception e) 
-        { 
-            Debug.Log(e);
-        }*/
+        if(this.isParent)
+            gl.MakeLine(g);
+      
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -84,6 +83,7 @@ public class Gluable : MonoBehaviour
         
         rb.velocity = new Vector2(0.0f, 0.0f);
         rb.angularVelocity = 0.0f;
+        rb.gravityScale = 1f;
         isGlueing = false;
 
         if (!isParent)
