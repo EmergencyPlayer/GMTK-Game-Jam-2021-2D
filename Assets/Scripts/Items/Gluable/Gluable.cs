@@ -52,9 +52,12 @@ public class Gluable : MonoBehaviour
         target = g;
         isGlueing = true;
         g.GetComponent<Gluable>().GlueTo(gameObject, !flag);
-        
-        if(this.isParent)
+
+        if (this.isParent)
+        {
+            line.SetActive(true);
             gl.MakeLine(g);
+        }
       
     }
 
@@ -69,6 +72,7 @@ public class Gluable : MonoBehaviour
         rb.gravityScale = 1f;
         isGlueing = false;
         gl.StopLine();
+        line.SetActive(false);
 
         if (!isParent)
         {
