@@ -1,19 +1,28 @@
 fileFormatVersion: 2
-guid: 8009e75fe5588de44b3bbf9fa18b5725
+guid: 0d9b1b3d9f1adc94593d1cdfa30a99a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3771495464861953192
-    second: mc_wpk_jump_0
+      213: -4068009376096438338
+    second: gravity_gun_chargeup-Sheet_0
   - first:
-      213: 8099557506435351854
-    second: mc_wpk_jump_1
+      213: 84501812795485411
+    second: gravity_gun_chargeup-Sheet_1
   - first:
-      213: -4049471351534490526
-    second: mc_wpk_jump_2
+      213: -2322548381845478002
+    second: gravity_gun_chargeup-Sheet_2
   - first:
-      213: -5454378672660972552
-    second: mc_wpk_jump_3
+      213: -3216385624511293454
+    second: gravity_gun_chargeup-Sheet_3
+  - first:
+      213: 8954653599267922351
+    second: gravity_gun_chargeup-Sheet_4
+  - first:
+      213: 6542765598877427689
+    second: gravity_gun_chargeup-Sheet_5
+  - first:
+      213: -2049065007616829321
+    second: gravity_gun_chargeup-Sheet_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +112,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mc_wpk_jump_0
+      name: gravity_gun_chargeup-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb730d296078b87c0800000000000000
+      internalID: -4068009376096438338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravity_gun_chargeup-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec2d8673f53c2100800000000000000
+      internalID: 84501812795485411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravity_gun_chargeup-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8521765d86a4cfd0800000000000000
+      internalID: -2322548381845478002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravity_gun_chargeup-Sheet_3
       rect:
         serializedVersion: 2
         x: 0
@@ -117,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85318e06bd4f8abc0800000000000000
-      internalID: -3771495464861953192
+      spriteID: 2f7d45ec05a1d53d0800000000000000
+      internalID: -3216385624511293454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mc_wpk_jump_1
+      name: gravity_gun_chargeup-Sheet_4
       rect:
         serializedVersion: 2
         x: 32
@@ -138,14 +210,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e258de883a8676070800000000000000
-      internalID: 8099557506435351854
+      spriteID: fa1a9073102554c70800000000000000
+      internalID: 8954653599267922351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mc_wpk_jump_2
+      name: gravity_gun_chargeup-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e72cb9a5a29cca50800000000000000
+      internalID: 6542765598877427689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravity_gun_chargeup-Sheet_6
       rect:
         serializedVersion: 2
         x: 0
@@ -159,29 +252,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26c6aa3c2436dc7c0800000000000000
-      internalID: -4049471351534490526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mc_wpk_jump_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8fb7399ee772e44b0800000000000000
-      internalID: -5454378672660972552
+      spriteID: 778d0536b324093e0800000000000000
+      internalID: -2049065007616829321
       vertices: []
       indices: 
       edges: []
