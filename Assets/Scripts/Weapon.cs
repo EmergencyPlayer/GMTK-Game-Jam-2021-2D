@@ -29,6 +29,7 @@ public class Weapon : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                FindObjectOfType<AudioManager>().Play("LaserGun");
                 Instantiate(projectile, shotPoint.position, transform.rotation);
                 timeBtwShots = startTimeBtwShots;
             }
@@ -47,6 +48,7 @@ public class Weapon : MonoBehaviour
         }
         if (glueableList.Count >= 2)
         {
+            FindObjectOfType<AudioManager>().Play("Hover");
             Debug.Log("2 objects are in list");
             glueableList[0].GetComponent<Gluable>().GlueTo(glueableList[1]);
             glueableList.Clear();

@@ -5,12 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class WinCondition : MonoBehaviour
 {
-    //public GameObject
-    // Start is called before the first frame update
+    public WinMenu win;
+    public GameObject winG;
+
+    void Start()
+    {
+        win = winG.GetComponent<WinMenu>();
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
-            Debug.Log("You Win!");
+        {
+            win.winGame = true;
+            FindObjectOfType<AudioManager>().Play("Win");
+        }
     }
 }

@@ -95,6 +95,7 @@ public class Gluable : MonoBehaviour
             {
                 temp[i].transform.parent = target.transform;           
             }
+            FindObjectOfType<AudioManager>().Play("Collision");
             Destroy(gameObject);
         }
         
