@@ -12,8 +12,6 @@ public class Gluable : MonoBehaviour
     private GameObject target;
     private bool isParent;
 
-    [SerializeField] private GameObject line;
-    private GlueLine gl;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +19,7 @@ public class Gluable : MonoBehaviour
         this.rb = gameObject.GetComponent<Rigidbody2D>();
         this.isGlueing = false;
         this.isParent = false;
-        this.gl = line.GetComponent<GlueLine>();
+        
     }
 
     // Update is called once per frame
@@ -51,16 +49,13 @@ public class Gluable : MonoBehaviour
         this.isParent = !flag;
         target = g;
         isGlueing = true;
-        g.GetComponent<Gluable>().GlueTo(gameObject, !flag);
-        
-        if(this.isParent)
-            gl.MakeLine(g);
+        g.GetComponent<Gluable>().GlueTo(gameObject, !flag);      
       
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.tag != "Item")
+        if (collision.collider.gameObject.tag != "Item" && collision.collider.gameObject.name != target.name)
             return;
         
         
@@ -68,7 +63,6 @@ public class Gluable : MonoBehaviour
         rb.angularVelocity = 0.0f;
         rb.gravityScale = 1f;
         isGlueing = false;
-        gl.StopLine();
 
         if (!isParent)
         {
