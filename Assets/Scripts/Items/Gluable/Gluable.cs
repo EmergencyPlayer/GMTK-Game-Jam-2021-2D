@@ -63,7 +63,7 @@ public class Gluable : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.tag != "Item")
+        if (collision.collider.gameObject.tag != "Item" && collision.collider.gameObject.name != target.name)
             return;
         
         

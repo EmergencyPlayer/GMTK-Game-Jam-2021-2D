@@ -57,12 +57,14 @@ public class GlueLine : MonoBehaviour
 
     private void SetPoints(Vector3 targetPos, float percent, float angle)
     {
-        Vector3 ropeEnd = Vector3.Lerp(transform.position, targetPos, percent * 0.9f);
+        //Vector3 ropeEnd = Vector3.Lerp(transform.position, targetPos, percent * 0.95f);
         //Debug.Log(Vector3.Lerp(transform.TransformPoint(transform.position), targetPos, 100));
-        float length = Vector2.Distance(transform.position, ropeEnd);
-        Debug.Log(transform.TransformPoint(targetPos));
+        //float length = Vector2.Distance(transform.position, ropeEnd);
+        //Debug.Log(transform.TransformPoint(targetPos));
         for (int i = 0; i < resolution; i++)
         {
+            Vector3 ropeEnd = Vector3.Lerp(transform.position, targetPos, percent * 0.90f);
+            float length = Vector2.Distance(transform.position, ropeEnd);
             float xPos = (float)i / resolution * length;
             //float reversePercent = (1 - percent);
 
