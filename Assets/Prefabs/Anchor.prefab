@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01c35cb4dbbb9b4981f8803d7add6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glue_power: 20
+  glue_power: 100
   isAnchor: 1
 --- !u!50 &3053966346619464024
 Rigidbody2D:
