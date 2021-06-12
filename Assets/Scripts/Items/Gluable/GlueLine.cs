@@ -20,10 +20,10 @@ public class GlueLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void MakeLine(gameObject go)
+    public void MakeLine(GameObject go)
     {
         StartCoroutine(AnimateRope(go.transform.position));
     }
@@ -45,16 +45,16 @@ public class GlueLine : MonoBehaviour
     private void SetPoints(Vector3 targetPos, float percent)
     {
         Vector3 ropeEnd = Vector3.Lerp(transform.position, targetPos, percent);
-        float length = Vector2.Distance(transform.position, ropeEnd );
+        float length = Vector2.Distance(transform.position, ropeEnd);
 
-        for(int i = 0; i < resolution; i++)
+        for (int i = 0; i < resolution; i++)
         {
             float xPos = (float)i / resolution * length;
             float reversePercent = (1 - percent);
 
             float amplitude = Mathf.Sin(reversePercent * wobbleCount * Mathf.PI);
 
-            float yPos = Mathf.Sin((float) waveCount * i / resolution * 2 * Mathf.PI * reversePercent) * amplitude;
+            float yPos = Mathf.Sin((float)waveCount * i / resolution * 2 * Mathf.PI * reversePercent) * amplitude;
 
             Vector2 pos = new Vector2(xPos, yPos);
             line.SetPosition(i, pos);

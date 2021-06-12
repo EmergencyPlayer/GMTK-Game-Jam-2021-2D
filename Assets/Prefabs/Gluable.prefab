@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 7485190217882256338}
   - component: {fileID: 5355158168257867945}
   - component: {fileID: 3540855378301917512}
+  - component: {fileID: 3212990150030797133}
   m_Layer: 0
   m_Name: Gluable
   m_TagString: Gluable
@@ -307,3 +308,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3212990150030797133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628284681279089971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0e60178796a46479fea9fc90a02cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  resolution: 0
+  waveCount: 0
+  wobbleCount: 0
+  waveSize: 0
+  animSpeed: 0
