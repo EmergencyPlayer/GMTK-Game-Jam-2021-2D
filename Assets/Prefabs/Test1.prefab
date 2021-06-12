@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5f0c3f2da58cf41bcf2e48ec356a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glue_power: 2
+  glue_power: 0.04
   times_used: 0
   max_times: 0
 --- !u!50 &3540855378301917512

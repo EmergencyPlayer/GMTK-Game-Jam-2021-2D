@@ -5,7 +5,7 @@ using System;
 
 public class Gluable : MonoBehaviour
 {
-    public float glue_power = 2.0f;
+    public float glue_power = 0.04f;
 
     public int times_used;
     public int max_times;
@@ -32,7 +32,7 @@ public class Gluable : MonoBehaviour
     void FixedUpdate()
     {
         if (isGlueing)
-            rb.AddForce((target.transform.position - gameObject.transform.position) * glue_power);
+            rb.AddForce((target.transform.position - gameObject.transform.position) * glue_power, ForceMode2D.Impulse);
     }
 
     public void Init()
