@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Lar6Level.unity
     guid: 7cd74996a457cc14f8f3506f815a3671
+  - enabled: 1
+    path: Assets/Scenes/Levels/Lar8Scene.unity
+    guid: e6afdbd1509c93242925038a26964fd7
   m_configObjects: {}
