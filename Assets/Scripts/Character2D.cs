@@ -9,13 +9,15 @@ public class Character2D : MonoBehaviour
     private Rigidbody2D _rigidbody;
     public Animator anim;
 
+    private bool grounded = true;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    
-   private void Update()
+
+    private void Update()
     {
         var movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
@@ -26,8 +28,9 @@ public class Character2D : MonoBehaviour
             //FindObjectOfType<AudioManager>().Play("PlayerWalking");
         }
 
-        if(Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+        if (Input.GetButtonDown("Jump") && grounded)
         {
+            grounded = false;
             FindObjectOfType<AudioManager>().Play("Jump");
             anim.SetBool("isJumping", true);
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
@@ -35,7 +38,7 @@ public class Character2D : MonoBehaviour
             jump = true;
         }
 
-        if(jump && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+        if (jump && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
             jump = false;
             FindObjectOfType<AudioManager>().Play("Landing");
@@ -51,4 +54,9 @@ public class Character2D : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Landing");
         }
     }*/
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        grounded = true;
+    }
 }
