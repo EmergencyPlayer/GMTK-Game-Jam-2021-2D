@@ -1646,6 +1646,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2900808490927056467, guid: c5a3fc05d683afd498798c96802cda02, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 2900808490927056469, guid: c5a3fc05d683afd498798c96802cda02, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1726,6 +1730,10 @@ PrefabInstance:
     - target: {fileID: 2900808490927056467, guid: c5a3fc05d683afd498798c96802cda02, type: 3}
       propertyPath: m_Name
       value: Platform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900808490927056467, guid: c5a3fc05d683afd498798c96802cda02, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 2900808490927056469, guid: c5a3fc05d683afd498798c96802cda02, type: 3}
       propertyPath: m_RootOrder

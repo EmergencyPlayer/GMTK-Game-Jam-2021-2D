@@ -55,8 +55,13 @@ public class Character2D : MonoBehaviour
         }
     }*/
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        grounded = true;
+        if (col.collider.gameObject.tag != "Wall")
+            grounded = true;
+        else
+            return;
+
+        
     }
 }

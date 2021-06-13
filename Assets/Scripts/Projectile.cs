@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.collider.gameObject.tag == "Environment")
+        if (coll.collider.gameObject.tag == "Environment" || coll.collider.gameObject.tag == "Wall")
         {
             DestroyProjectile();
         }
