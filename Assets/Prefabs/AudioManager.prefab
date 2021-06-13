@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: PlayerWalking
-    clip: {fileID: 8300000, guid: 13e6757596a8c3e45945184eccb25e16, type: 3}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 36797ef7cf5a4f44dabe3de5b2e77dbc, type: 3}
     volume: 0.316
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
   - name: Collision
     clip: {fileID: 8300000, guid: 286b04bf897870143a60de8ecc439bce, type: 3}
@@ -77,6 +77,12 @@ MonoBehaviour:
   - name: Reset
     clip: {fileID: 8300000, guid: 63813d9ec6645f64780e0177ea533031, type: 3}
     volume: 0.5
-    pitch: 1
+    pitch: 2.04
+    loop: 0
+    source: {fileID: 0}
+  - name: Landing
+    clip: {fileID: 8300000, guid: 4befbbb097b973c4d91d2a4b77c1ae6b, type: 3}
+    volume: 0.5
+    pitch: 0.59
     loop: 0
     source: {fileID: 0}
