@@ -33,7 +33,6 @@ public class MovingGlueableMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("cool");
         if (collision.collider.gameObject.tag != "Item" && collision.collider.gameObject.tag != "Projectile")
             return;
         Destroy(this);
