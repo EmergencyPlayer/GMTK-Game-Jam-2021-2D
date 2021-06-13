@@ -1,11 +1,14 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class AudioManager : MonoBehaviour{
 
     public Sound[] sounds;
+    int currentScene;
+    bool mainTheme;
 
     public static AudioManager instance;
     
@@ -18,7 +21,10 @@ public class AudioManager : MonoBehaviour{
         else
         {
             Destroy(gameObject);
+            return;
         }
+
+        mainTheme = false;
 
         DontDestroyOnLoad(gameObject);
 
@@ -37,6 +43,7 @@ public class AudioManager : MonoBehaviour{
     void Start()
     {
         Play("MainTheme");
+        mainTheme = true;
     }
 
     
@@ -51,5 +58,32 @@ public class AudioManager : MonoBehaviour{
 
         s.source.Play();
 
+    }
+
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found");
+            return;
+        }
+
+        s.source.Stop();
+
+    }
+
+    void Update()
+    {
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        if (currentScene == 0)
+        {
+            Stop("MainTheme");
+        }
+
+        if (currentScene != 0 && !mainTheme)
+        {
+            Play("MainTheme");
+        }
     }
 }
