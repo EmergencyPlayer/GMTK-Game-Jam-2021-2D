@@ -63,7 +63,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: MainTheme
-    clip: {fileID: 8300000, guid: 3e908abee400b694eaf6041d3e3314ba, type: 3}
+    clip: {fileID: 8300000, guid: a149707d973f09948a9c7890c68b8aba, type: 3}
     volume: 0.2
     pitch: 1
     loop: 1
