@@ -4,6 +4,7 @@ public class Character2D : MonoBehaviour
 {
     public float MovementSpeed = 1;
     public float JumpForce = 1;
+    bool jump;
 
     private Rigidbody2D _rigidbody;
     public Animator anim;
@@ -27,14 +28,27 @@ public class Character2D : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
+            FindObjectOfType<AudioManager>().Play("Jump");
             anim.SetBool("isJumping", true);
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             anim.SetBool("isJumping", false);
+            jump = true;
         }
-        else
+
+        if(jump && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
-            //anim.SetBool("isJumping", false);
+            jump = false;
+            FindObjectOfType<AudioManager>().Play("Landing");
         }
         anim.SetFloat("speed", Input.GetAxis("Horizontal"));
     }
+
+    /*private void OnCollisionEnter2D(Collider coll)
+    {
+        if (coll.gameObject.tag == "Environment" && jump)
+        {
+            jump = false;
+            FindObjectOfType<AudioManager>().Play("Landing");
+        }
+    }*/
 }
