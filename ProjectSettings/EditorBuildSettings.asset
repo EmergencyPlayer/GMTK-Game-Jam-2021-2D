@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/LarSecondLevel.unity
     guid: 259096d4d2cc3064aa856c3d84325147
   - enabled: 1
+    path: Assets/Scenes/Levels/Lar7Level.unity
+    guid: 9e45d6c040b44394fa53312f8896bf75
+  - enabled: 1
     path: Assets/Scenes/Levels/LarThirdLevel.unity
     guid: 01dcad75e5cd42c4f949872f12a56953
   - enabled: 1
