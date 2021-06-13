@@ -9,6 +9,7 @@ TagManager:
   - Gluable
   - Anchor
   - Projectile
+  - Environment
   layers:
   - Default
   - TransparentFX

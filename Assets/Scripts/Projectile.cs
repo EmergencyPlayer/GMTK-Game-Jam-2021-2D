@@ -38,6 +38,11 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+        if (coll.collider.gameObject.tag == "Environment")
+        {
+            DestroyProjectile();
+        }
+        
         if (coll.collider.gameObject.tag != "Item")
         {
             return;
