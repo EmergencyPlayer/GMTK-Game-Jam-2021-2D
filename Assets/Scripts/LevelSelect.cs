@@ -54,4 +54,9 @@ public class LevelSelect : MonoBehaviour
         SceneManager.LoadScene(12);
     }
 
+    public void SecretLevel()
+    {
+        SceneManager.LoadScene("SecretLevel");
+    }
+
 }
